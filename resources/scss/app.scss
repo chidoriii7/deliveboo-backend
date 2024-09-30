@@ -1,0 +1,206 @@
+@use "./partials/common" as *;
+@use "./partials/reset" as *;
+@use "./partials/variables" as *;
+@use "./partials/mixin" as *;
+@use "./partials/utils" as *;
+@use "./partials/typography" as *;
+
+/*resources/scss/app.scss*/
+@import "~bootstrap/scss/bootstrap";
+
+body {
+    font-family: "Poppins";
+}
+
+a {
+    text-decoration: none;
+}
+
+.preview-index {
+    height: 40px;
+    width: 70px;
+    object-fit: cover;
+}
+
+.preview-show {
+    width: 250px;
+    object-fit: cover;
+}
+
+.logo {
+    height: 42px;
+}
+
+.bg-custom-primary {
+    background-color: #ec7600;
+}
+
+.bg-custom-secondary {
+    background-color: #434848;
+}
+
+.nav-link.active {
+    background-color: grey !important;
+}
+
+.custom-ml {
+    margin-left: 16.66667%;
+}
+
+.custom-sidebar {
+    height: calc(100vh - 68px);
+    position: fixed;
+    top: 68px;
+}
+
+.custom-sidebar a .fa-user-gear {
+    display: none;
+}
+
+.nav-spaces {
+    margin-right: 35px;
+    margin-left: 20px;
+}
+
+.custom-btn {
+    border-radius: 12px;
+}
+
+.fs-20 {
+    font-size: 13px;
+}
+.canvas {
+    height: 300px;
+}
+
+.page-link.active,
+.active > .page-link {
+    z-index: 3;
+    color: white;
+    background-color: #ec7600;
+    border-color: #ec7600;
+}
+
+.custom-stats-margins {
+    padding-right: 40px;
+}
+
+// RESPONSIVITA' DASHBOARD
+
+@media (max-width: 1090px) {
+    .custom-sidebar {
+        width: 93px;
+    }
+
+    .custom-ml {
+        margin-left: 10.66667%;
+    }
+    /* Nasconde il testo "Area Riservata" */
+    .custom-sidebar a span {
+        display: none;
+    }
+
+    .custom-sidebar a .fa-user-gear {
+        display: block;
+    }
+
+    /* Allinea al centro l'icona di "Area Riservata" e aumentane la dimensione */
+    .custom-sidebar a i {
+        font-size: 1.8rem; /* Aumenta la dimensione dell'icona */
+        margin: auto; /* Centra l'icona */
+        display: block; /* Assicura che l'icona si comporti come un blocco */
+        padding: 0;
+        margin-right: 0;
+    }
+
+    /* Nasconde i testi delle voci di menu e mantiene solo le icone */
+    .custom-sidebar .nav-link {
+        justify-content: center; /* Allinea le icone al centro */
+    }
+
+    .custom-sidebar .nav-link i {
+        font-size: 1.8rem; /* Aumenta la dimensione delle icone nel menu */
+    }
+
+    .custom-sidebar .nav-link span {
+        display: none; /* Nasconde il testo dei link */
+    }
+    .nav-spaces {
+        margin-right: 5px;
+        margin-left: 20px;
+    }
+}
+
+@media (max-width: 767px) {
+    .custom-ml {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 640px) {
+    .nav-spaces {
+        margin-right: 5px;
+        margin-left: 5px;
+    }
+
+    .dashboard-card-header {
+        font-size: 17px;
+    }
+
+    .custom-sidebar a i {
+        font-size: 1.8rem; /* Aumenta la dimensione dell'icona */
+    }
+}
+
+@media (max-width: 450px) {
+    .custom-stats-margins {
+        padding-right: 5px;
+        padding-bottom: 20px;
+    }
+
+    .custom-margins {
+        margin-right: 0 !important;
+    }
+}
+
+@media (max-width: 390px) {
+    .dashboard-card-header {
+        font-size: 15px;
+    }
+
+    .custom-fs-order-list {
+        font-size: 15px !important;
+    }
+}
+
+// /* Modalità chiara */
+// .dropdown-item {
+//     background-color: #fff;
+//     color: #000;
+// }
+
+// .dropdown-item:hover {
+//     background-color: #f1f1f1;
+//     color: #000;
+// }
+
+// /* Modalità scura */
+// .dropdown-item-dark {
+//     background-color: #212529;
+//     color: #fff;
+// }
+
+// .dropdown-item-dark:hover {
+//     background-color: #1f1e1e;
+//     color: #fff;
+// }
+
+// /* Bordi chiari per le card in modalità scura */
+// .card-dark {
+//     border: 1px solid #ffffff;
+// }
+
+// /* Mantieni i bordi scuri per la modalità chiara */
+// .card-light {
+//     border: 1px solid #dee2e6; /* Questo è il bordo predefinito di Bootstrap */
+// }
